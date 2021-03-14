@@ -1,0 +1,5 @@
+{
+  "entrypoint": "dev.sllcoding.minestomairconditioner.MinestomAirConditioner",
+  "name": "MinestomAirConditioner",
+  "mixinConfig": "mixins.minestomairconditioner.json"
+}
