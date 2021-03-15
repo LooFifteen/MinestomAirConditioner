@@ -61,8 +61,7 @@ public class FlightACheck extends Check {
     }
 
     protected void violate(PlayerMoveEvent event) {
-        event.setCancelled(true);
-        super.violate();
+        if (super.violate()) event.setCancelled(true);
     }
 
 }
