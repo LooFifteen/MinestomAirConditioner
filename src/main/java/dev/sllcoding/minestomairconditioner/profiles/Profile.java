@@ -1,7 +1,7 @@
 package dev.sllcoding.minestomairconditioner.profiles;
 
 import dev.sllcoding.minestomairconditioner.checks.Check;
-import dev.sllcoding.minestomairconditioner.checks.Checks;
+import dev.sllcoding.minestomairconditioner.checks.CheckManager;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
 import net.minestom.server.utils.time.TimeUnit;
@@ -21,7 +21,7 @@ public class Profile {
 
     public Profile(Player player) {
         this.player = player;
-        Checks.getChecks().forEach(checkClass -> {
+        CheckManager.getChecks().forEach(checkClass -> {
             try {
                 checks.add(checkClass.getDeclaredConstructor(Profile.class).newInstance(this));
             } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {

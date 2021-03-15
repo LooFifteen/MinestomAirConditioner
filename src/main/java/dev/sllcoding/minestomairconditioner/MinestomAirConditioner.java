@@ -1,6 +1,7 @@
 package dev.sllcoding.minestomairconditioner;
 
-import dev.sllcoding.minestomairconditioner.checks.Checks;
+import dev.sllcoding.minestomairconditioner.checks.CheckManager;
+import dev.sllcoding.minestomairconditioner.commands.CommandManager;
 import dev.sllcoding.minestomairconditioner.listeners.PlayerListener;
 import dev.sllcoding.minestomairconditioner.utils.ComponentUtil;
 import net.kyori.adventure.audience.Audience;
@@ -23,7 +24,8 @@ public class MinestomAirConditioner extends Extension {
         Audience console = adventure.console();
         try {
             console.sendMessage(ComponentUtil.get(Component.text("Starting...")));
-            Checks.setup();
+            CheckManager.setup();
+            CommandManager.setup();
 
             MinecraftServer.getGlobalEventHandler().addEventCallback(PlayerLoginEvent.class, PlayerListener.PLAYER_LOGIN_EVENT);
             console.sendMessage(ComponentUtil.get(Component.text("Successfully started.")));

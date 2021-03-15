@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Checks {
+public class CheckManager {
 
     private static final List<Class<? extends Check>> checks = new ArrayList<>();
 
